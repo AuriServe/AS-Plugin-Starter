@@ -15,8 +15,12 @@
     "node": ">=8"
   },
   "scripts": {
-    "build": "webpack --mode=production --progress --config ./webpack.ts",
-    "start": "webpack --mode=development --watch --progress --config ./webpack.ts"
+    "build": "npm run build-client & npm run build-server",
+    "build-client": "webpack --mode=production --progress --config ./webpack.client.ts",
+    "build-server": "webpack --mode=production --progress --config ./webpack.server.ts",
+    "start": "npm run dev-client & npm run dev-server",
+    "dev-client": "webpack --mode=development --watch --progress --config ./webpack.client.ts",
+    "dev-server": "webpack --mode=development --watch --progress --config ./webpack.server.ts"
   },
   "jest": {
     "moduleFileExtensions": [

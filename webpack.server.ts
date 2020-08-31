@@ -8,13 +8,10 @@ export default function(env: { NODE_ENV: string }, argv: { mode: string }) {
 		target: 'node',
 		context: resolve(__dirname, 'src'),
 
-		entry: {
-			server: ['./Server.ts'],
-			client: ['./Client.ts'],
-		},
+		entry: './Server.ts',
 
 		output: {
-			filename: '[name].js',
+			filename: 'server.js',
 			path: resolve(__dirname, 'dist'),
 			library: 'as-plugin',
 			libraryTarget: 'umd',
@@ -52,14 +49,6 @@ export default function(env: { NODE_ENV: string }, argv: { mode: string }) {
 		plugins: [
 		]
 	};
-
-	// if (argv.mode === 'development') {
-	//   config.devServer = {
-	//     contentBase: join(__dirname, 'dist'),
-	//       compress: true,
-	//       port: 9000
-	//   };
-	// }
 
 	return config;
 };
