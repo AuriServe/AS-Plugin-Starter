@@ -1,5 +1,5 @@
-import { Definition } from './ElementDefinition';
+import { Element, ElementConfig } from './Element';
 
 export default interface Serve {
-	registerElement: (identifier: string, definition: Definition) => void;
+	registerElement: (identifier: string, element: Element, definition: ElementConfig) => void;
 }
