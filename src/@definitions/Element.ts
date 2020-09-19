@@ -1,30 +1,78 @@
-import Serve from './Serve';
+/*
+* Element Type
+*/
 
-import * as Preact from 'preact';
+export type T = any;
 
-export type Element = any;
+/*
+* Props
+*/
 
-export interface ElementPropField {
+export type Prop = FieldProp | TableProp | ArrayProp;
+
+export interface FieldProp {
 	name?: string;
 	optional?: true;
 	default?: any;
-
 	type: string;
 }
 
-export interface ElementPropTable {
+export interface TableProp {
 	name?: string;
 	optional?: true;
 	
-	fields: ElementProps;
+	fields: PropsTable;
 }
 
-export interface ElementProps {
-	[key: string]: ElementPropField | ElementPropTable;
+export interface ArrayProp {
+	name?: string;
+	optional?: true;	
+	
+	entries: PropType | PropsTable;
+}
+
+export interface PropsTable {
+	[key: string]: Prop;
 };
 
-export interface ElementConfig {
-	props: ElementProps;
-	manageElement?: Element;
+/*
+* Property Type Hints
+*/
+
+export type BasePropType = 
+	"text" | "long_text" | "number" | "date" | "time" | "datetime" | "boolean" | "color" | "media" | "url";
+
+export type PropType =
+	BasePropType | "text:markdown" | "long_text:markdown" | "media:image" | "url:image"
+
+
+/*
+* Configuration Object
+*/
+
+export interface Config {
+	name?: string;
+	props: PropsTable;
 	hydrate?: true;
+}
+
+/*
+* Definitions
+*/
+
+export interface ServerDefinition {
+	identifier: string;
+	element: T;
+	config: Config;
+}
+
+export interface ClientDefinition {
+	identifier: string;
+	element: T;
+}
+
+export interface AdminDefinition {
+	identifier: string;
+	editElement: T;
+	element: T;
 }

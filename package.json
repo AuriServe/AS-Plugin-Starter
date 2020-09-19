@@ -2,8 +2,8 @@
   "name": "as-plugin-starter",
   "version": "1.0.0",
   "description": "Starter for a Typescript AuriServe plugin.",
-  "main": "index.js",
   "author": "Auri Collings (Aurailus)",
+  "repository": "github:AuriServe/AS-Plugin-Base",
   "license": "MIT",
   "keywords": [
     "preact",
@@ -15,41 +15,31 @@
     "node": ">=8"
   },
   "scripts": {
-    "build": "npm run build-client & npm run build-server",
-    "build-client": "webpack --mode=production --progress --config ./webpack.client.ts",
-    "build-server": "webpack --mode=production --progress --config ./webpack.server.ts",
-    "start": "npm run dev-client & npm run dev-server",
-    "dev-client": "webpack --mode=development --watch --progress --config ./webpack.client.ts",
-    "dev-server": "webpack --mode=development --watch --progress --config ./webpack.server.ts"
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
-    "transform": {
-      "^.+\\.(ts|tsx)$": "<rootDir>/transform.js"
-    }
+    "dist": "webpack --mode=production --progress --config ./webpack.ts",
+    "dev": "webpack --mode=development --watch --progress --config ./webpack.ts"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
-    "@types/jest": "^26.0.10",
-    "@types/webpack": "^4.41.21",
+    "@types/mini-css-extract-plugin": "^0.9.1",
+    "@types/webpack": "^4.41.22",
     "@typescript-eslint/eslint-plugin": "^3.10.1",
     "@typescript-eslint/parser": "^3.10.1",
-    "eslint-plugin-jsdoc": "^30.3.0",
     "babel-loader": "^8.1.0",
+    "css-loader": "^4.3.0",
     "eslint": "^7.7.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-loader": "^4.0.2",
-    "html-webpack-plugin": "^4.4.1",
-    "jest": "^26.4.2",
+    "eslint-plugin-jsdoc": "^30.3.0",
+    "fork-ts-checker-webpack-plugin": "^5.2.0",
+    "mini-css-extract-plugin": "^0.11.2",
+    "null-loader": "^4.0.0",
+    "sass-loader": "^10.0.2",
     "ts-loader": "^8.0.3",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.2",
     "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "webpack-merge": "^5.1.4"
   },
   "dependencies": {
     "preact": "^10.4.8",

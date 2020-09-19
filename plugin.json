@@ -1,9 +1,10 @@
 {
+	"identifier": "{IDENTIFIER}",
 	"name": "{NAME}",
 	"author": "{AUTHOR}",
 	"description": "{DESCRIPTION}",
+	"sourceRoot": "dist",
 	"sources": {
-		"server": "dist/server.js",
-		"client": "dist/client.js"
+		"server": "dist/server.js"
 	}
 }

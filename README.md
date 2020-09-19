@@ -1,2 +1,3 @@
 # AS-Plugin-Starter
-Basic plugin configuration for AuriServe.
+
+A small starter repository for a Typescript based [AuriServe](https://github.com/AuriServe/AuriServe) plugin.

@@ -1,12 +1,23 @@
 {
   "compilerOptions": {
+    "strict": true,
     "alwaysStrict": true,
-    "jsx": "react",
+
     "target": "es5",
     "module": "commonjs",
-    "lib": ["dom", "es2015"],
-    "jsxFactory": "Preact.h",
+    "esModuleInterop": true,
+    "lib": [ "dom", "es2015" ],
+    
     "noEmitHelpers": true,
-    "importHelpers": true
+    "importHelpers": true,
+
+    "jsx": "react",
+    "jsxFactory": "Preact.h",
+
+    "removeComments": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true, 
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
   }
 }
